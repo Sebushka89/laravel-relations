@@ -10942,3 +10942,16 @@ a.text-dark:focus {
   }
 }
 
+.content {
+  padding: 12px;
+}
+
+img {
+  width: 75%;
+}
+
+.picture {
+  width: 30%;
+  margin: 0 auto;
+}
+
