@@ -13,22 +13,26 @@
     
         <form action="{{ route('articles.store')}}" method="POST">
             @csrf
-        
-            <label class="mt-2" for="title">Title</label>
-            <input type="text" class="form-control"name="title" id="title">
-        
-            <label class="mt-2" for="text">Post text</label>
-            <input type="text" class="form-control"name="text" id="text">
+
+            <div class="form-group">
+                <label class="mt-2" for="title">Title</label>
+                <input type="text" class="form-control"name="title" id="title">
+            </div>
+
+            <div class="form-group">
+                <label class="mt-2" for="text">Post text</label>
+                <input type="text" class="form-control"name="text" id="text">
+            </div>
 
             <div class="form-group">
                 <label for="cover">Cover</label>
                 <input type="text" class="form-control" name="cover" id="cover">
             </div>
             
-            <div class="mt-2">
+            {{-- <div class="mt-2">
                 <label class="mt-2" for="cover">Add image:</label>
                 <input type="file" name="cover" id="cover">
-            </div>
+            </div> --}}
         
             <div class="mt-2">Author</div>
             <div class="form-group">
@@ -44,6 +48,16 @@
                     </select>
                 </div>
             </div>
+
+            <strong>Tags</strong>
+            <div class="form-group">
+                @foreach($tags as $tag)
+                <div>
+                    {{-- tags[] diventerà un array di id di Tags per cui abbiamo flaggato la checbox --}}
+                    <input name="tags[]" type="checkbox" value="{{ $tag->id }}">
+                    <label>{{$tag->tag_name}} </label>
+                </div>
+                @endforeach
         
             <div>
                 <button type="submit" class="btn btn-dark mb-5" type="submit">Create article</button>
