@@ -19,20 +19,25 @@
         
             <label class="mt-2" for="text">Post text</label>
             <input type="text" class="form-control"name="text" id="text">
+
+            <div class="form-group">
+                <label for="cover">Cover</label>
+                <input type="text" class="form-control" name="cover" id="cover">
+            </div>
             
-            <div class="mt-3 mb-3">
+            <div class="mt-2">
                 <label class="mt-2" for="cover">Add image:</label>
                 <input type="file" name="cover" id="cover">
             </div>
         
-            <div class="mt-2">Autore</div>
+            <div class="mt-2">Author</div>
             <div class="form-group">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text mt-2" for="author_id">Opzioni</label>
+                        <label class="input-group-text mt-2" for="author_id">Options</label>
                     </div>
                     <select class="custom-select mt-2" id="author_id" name="author_id">
-                        <option selected>Scegli l'autore</option>
+                        <option selected>Choose author...</option>
                         @foreach($authors as $author)
                             <option value="{{$author->id}}">{{ ucfirst($author->name) }} {{ ucfirst($author->surname) }}</option>
                         @endforeach

@@ -26,7 +26,7 @@
     
                 </div>
                 
-                <p><strong> Contact details:</strong> {{ $article->author->picture }}</p>
+                <p class="text-center"><strong> Contact details:</strong> {{ $article->author->email }}</p>
 
                 <div class="d-flex align-items-center justify-content-center">
                     <a href="{{ route('articles.index') }}">

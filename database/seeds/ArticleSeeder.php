@@ -13,18 +13,51 @@ class ArticleSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        
+        $authorList = [
+            [
+                'name'=>'Francesco',
+                'surname'=>'Abate'
+            ],
+            [
+                'name'=>'Elena',
+                'surname'=>'Dusi'
+            ],
+            [
+                'name'=>'Sharon',
+                'surname'=>'Nizza'
+            ],
+            [
+                'name'=>'Carlo',
+                'surname'=>'Bonini'
+            ],
+            [
+                'name'=>'Giovanna',
+                'surname'=>'Vitale'
+            ]
+        ];
+
+
         $listOfAuthorID = [];
 
-        for($x = 0; $x < 20; $x++) {
+        foreach ($authorList as $author) {
             $authorObject = new Author();
-            $authorObject->name =  $faker->word(1);
-            $authorObject->surname =  $faker->word(1);
-            $authorObject->picture = $faker->imageUrl(640, 480, 'animal', true);
+            $authorObject->name = $author['name'];
+            $authorObject->surname = $author['surname'];
             $authorObject->email = $faker->email();
+            $authorObject->picture = $faker->imageUrl(640, 480, 'animal', true);
             $authorObject->save();
             $listOfAuthorID[] = $authorObject->id;
         }
+
+        // for($x = 0; $x < 20; $x++) {
+        //     $authorObject = new Author();
+        //     $authorObject->name =  $faker->word(1);
+        //     $authorObject->surname =  $faker->word(1);
+        //     $authorObject->picture = $faker->imageUrl(640, 480, 'animal', true);
+        //     $authorObject->email = $faker->email();
+        //     $authorObject->save();
+        //     $listOfAuthorID[] = $authorObject->id;
+        // }
 
 
 

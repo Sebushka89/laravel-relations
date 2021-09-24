@@ -17,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = article::paginate(12);
+        $articles = article::all();
         
         //chiamato il view posts.index perche index.blade.php si trova dentro la cartella posts(creata da me) su view 
         return view('articles.index',compact('articles'));
