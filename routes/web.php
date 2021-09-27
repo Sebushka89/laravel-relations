@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'ArticleController@Index');
 
 Route::resource('articles', ArticleController::class);
+
+Route::resource('tag', TagsController::class);
+
+Route::resource('comments', CommentController::class);

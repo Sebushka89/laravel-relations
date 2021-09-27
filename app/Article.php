@@ -14,4 +14,9 @@ class Article extends Model
         //return $this->belongsToMany(Author::class, 'book_author');
         return $this->belongsToMany(Tag::class, 'tag_article');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
