@@ -11,7 +11,7 @@
     <div class="container">
         <h2 class="mt-4 mb-4">Crea un nuovo articolo</h2>
     
-        <form action="{{ route('articles.store')}}" method="POST">
+        <form action="{{ route('articles.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -29,10 +29,10 @@
                 <input type="text" class="form-control" name="cover" id="cover">
             </div>
             
-            {{-- <div class="mt-2">
+            {{-- <div class=" form-group mt-2">
                 <label class="mt-2" for="cover">Add image:</label>
                 <input type="file" name="cover" id="cover">
-            </div> --}}
+            </div>  --}}
         
             <div class="mt-2">Author</div>
             <div class="form-group">

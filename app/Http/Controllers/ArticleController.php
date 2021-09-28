@@ -52,6 +52,9 @@ class ArticleController extends Controller
         $article = new article();
     
         $article->title = $data['title'];
+
+        //$picturePath = Storage::put('images', $data['cover']);
+        //$article->cover = $picturePath;con upload andava questo
         $article->cover = $data['cover'];
         $article->text = $data['text'];
         $article->author_id=$data['author_id'];
