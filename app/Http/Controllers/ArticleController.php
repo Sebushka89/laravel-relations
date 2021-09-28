@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendNewMail;
 
 use App\Article;
 
@@ -59,6 +61,17 @@ class ArticleController extends Controller
         
         $article->tag()->sync($data['tags']);
 
+        $authors = Author::all();
+        
+        foreach($authors as $author){
+        Mail::to($author->email)->send(new SendNewMail($article));
+        }//email mandata a tutti gli autori ciclando gli autori e usando il corrispondente indirizzo email 
+
+        // foreach($authors as $author){
+        //      Mail::to($author->email)->queue(new SendNewMail($article));
+        // } mandare email scaglionate
+
+        // Mail::to('info@test.it')->send(new SendNewMail($article)); email mandata a un singolo utente scrivendo la sua email
         return redirect()->route('articles.show', $article->id);
     }
 
