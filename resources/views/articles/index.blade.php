@@ -13,7 +13,7 @@
         <a href="{{ route('articles.create') }}"><button class="btn btn-primary">Add Article</button></a>
         <div class="row">
             @foreach($articles as $article)
-                <div class="content  col-12">
+                <div class="content  col-6">
         
                     <div class="togh-cont">
                         <div class="user-cont text-center">
@@ -29,6 +29,7 @@
     
                         <div class="img-container mb-2 mt-2 text-center">
                             <img src="{{$article->cover}}" alt="picture of {{$article->title}}" />
+                            {{-- {{ asset('storage/'. $article->cover) }}  per mostare img caricate da noi--}} 
                         </div>
         
                     </div>

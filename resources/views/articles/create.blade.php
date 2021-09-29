@@ -24,15 +24,15 @@
                 <input type="text" class="form-control"name="text" id="text">
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="cover">Cover</label>
                 <input type="text" class="form-control" name="cover" id="cover">
-            </div>
+            </div> --}}
             
-            {{-- <div class=" form-group mt-2">
+            <div class=" form-group mt-2">
                 <label class="mt-2" for="cover">Add image:</label>
                 <input type="file" name="cover" id="cover">
-            </div>  --}}
+            </div>  
         
             <div class="mt-2">Author</div>
             <div class="form-group">

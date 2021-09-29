@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendNewMail;
+use Illuminate\Support\Facades\Storage;
 
 use App\Article;
 
@@ -53,9 +54,11 @@ class ArticleController extends Controller
     
         $article->title = $data['title'];
 
-        //$picturePath = Storage::put('images', $data['cover']);
-        //$article->cover = $picturePath;con upload andava questo
-        $article->cover = $data['cover'];
+        
+        $picturePath = Storage::put('images', $data['cover']);
+        
+        $article->cover = $picturePath;//con upload andava questo
+        //$article->cover = $data['cover'];
         $article->text = $data['text'];
         $article->author_id=$data['author_id'];
         
